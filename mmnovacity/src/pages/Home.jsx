@@ -19,19 +19,19 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 import buildingImg from "../assets/photos/building.jpg";
 import iphoneImg from "../assets/photos/iphone.jpg";
-import humanImg from "../assets/photos/human.jpg";
-
 const Home = () => {
   const navigate = useNavigate();
+
   return (
     <>
       {/* ================= HERO ================= */}
       <Box
         sx={{
-          height: "100vh",
+          height: { xs: "50vh", md: "60vh" }, // top half feeling, responsive
           backgroundImage: `url(${buildingImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "top center", // 👈 important
+          backgroundRepeat: "no-repeat",
           position: "relative",
           display: "flex",
           alignItems: "center",
@@ -40,13 +40,13 @@ const Home = () => {
           color: "#fff",
         }}
       >
-        {/* LIGHTER OVERLAY */}
+        {/* Overlay */}
         <Box
           sx={{
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.6))",
+              "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.65))",
           }}
         />
 
@@ -54,7 +54,7 @@ const Home = () => {
           <Typography
             sx={{
               fontWeight: 800,
-              fontSize: { xs: 36, md: 72 },
+              fontSize: { xs: 28, md: 64 },
               letterSpacing: 2,
               lineHeight: 1.1,
             }}
@@ -65,7 +65,7 @@ const Home = () => {
           <Typography
             sx={{
               fontWeight: 800,
-              fontSize: { xs: 36, md: 72 },
+              fontSize: { xs: 28, md: 64 },
               letterSpacing: 2,
               lineHeight: 1.1,
             }}
@@ -73,7 +73,7 @@ const Home = () => {
             HOME IN YANGON
           </Typography>
 
-          <Typography sx={{ mt: 4, opacity: 0.95 }}>
+          <Typography sx={{ mt: 3, opacity: 0.95 }}>
             Premium Properties for Sale & Rent
           </Typography>
 
@@ -82,25 +82,24 @@ const Home = () => {
           </Typography>
 
           <Button
-                onClick={() => navigate("/services")}
-                sx={{
-                  mt: 5,
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: "40px",
-                  backgroundColor: "#0f172a",
-                  color: "#fff",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 2,
-                  fontWeight: 600,
-                  textTransform: "none",
-                  "&:hover": {
-                    backgroundColor: "#1e293b",
-                  },
-                }}
-              >
-        
+            onClick={() => navigate("/services")}
+            sx={{
+              mt: 4,
+              px: 4,
+              py: 1.5,
+              borderRadius: "40px",
+              backgroundColor: "#0f172a",
+              color: "#fff",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 2,
+              fontWeight: 600,
+              textTransform: "none",
+              "&:hover": {
+                backgroundColor: "#1e293b",
+              },
+            }}
+          >
             <Box
               sx={{
                 width: 36,
@@ -120,7 +119,6 @@ const Home = () => {
           </Button>
         </Container>
       </Box>
-
       {/* ================= STAY UPDATED ================= */}
 <Box
   sx={{
@@ -256,18 +254,52 @@ const Home = () => {
           </Typography>
 
           <Box sx={{ display: "flex", gap: 3, mt: 3 }}>
-            <Box
-              component="img"
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              sx={{ height: 55 }}
-            />
+  {/* Google Play */}
+  <Box
+    component="a"
+    href="https://play.google.com/store/games?device=windows"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{ display: "inline-block" }}
+  >
+    <Box
+      component="img"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+      alt="Get it on Google Play"
+      sx={{
+        height: 55,
+        cursor: "pointer",
+        transition: "transform 0.3s ease",
+        "&:hover": {
+          transform: "scale(1.05)",
+        },
+      }}
+    />
+  </Box>
 
-            <Box
-              component="img"
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              sx={{ height: 55 }}
-            />
-          </Box>
+  {/* Apple App Store */}
+  <Box
+    component="a"
+    href="https://www.apple.com/app-store/"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{ display: "inline-block" }}
+  >
+    <Box
+      component="img"
+      src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+      alt="Download on the App Store"
+      sx={{
+        height: 55,
+        cursor: "pointer",
+        transition: "transform 0.3s ease",
+        "&:hover": {
+          transform: "scale(1.05)",
+        },
+      }}
+    />
+  </Box>
+</Box>
         </Box>
       </Grid>
     </Grid>
@@ -406,106 +438,7 @@ const Home = () => {
   </Container>
 </Box>
 
-{/* ================= CLIENT REVIEWS ================= */}
-<Box
-  sx={{
-    py: 14,
-    backgroundColor: "#ffffff",
-  }}
->
-  <Container maxWidth="xl">
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        flexDirection: { xs: "column", md: "row" },
-        gap: { xs: 6, md: 10 },
-      }}
-    >
-      {/* LEFT SIDE */}
-      <Box
-        sx={{
-          flex: 1.2, // slightly larger text area
-        }}
-      >
-        {/* Section Label */}
-        <Typography
-          sx={{
-            fontSize: 18,
-            fontWeight: 600,
-            letterSpacing: 1,
-            mb: 4,
-          }}
-        >
-          ● CLIENT REVIEWS
-        </Typography>
 
-        {/* Quote */}
-        <Typography
-          sx={{
-            fontFamily: "Georgia, serif",
-            fontSize: { xs: 28, md: 52 },
-            lineHeight: 1.25,
-            fontWeight: 500,
-            mb: 6,
-            maxWidth: 700,
-          }}
-        >
-          <Box component="span" sx={{ color: "#f97316" }}>
-            “
-          </Box>{" "}
-          NovaCity helped us find our perfect family home in South
-          Okkalapa. Professional service from start to finish.
-        </Typography>
-
-        {/* Author */}
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <Typography
-            sx={{
-              fontWeight: 700,
-              fontSize: 18,
-            }}
-          >
-            Aung Kyaw Min
-          </Typography>
-
-          <Typography
-            sx={{
-              color: "#16a34a",
-              fontSize: 15,
-            }}
-          >
-            ★ Google Reviews
-          </Typography>
-        </Box>
-      </Box>
-
-      {/* RIGHT SIDE */}
-      <Box
-        sx={{
-          flex: 1,
-          display: "flex",
-          justifyContent: "flex-end", // pushes image right
-        }}
-      >
-        <Box
-          component="img"
-          src={humanImg}
-          alt="Client"
-          sx={{
-            width: "100%",
-            maxWidth: 560,
-            height: 600,
-            objectFit: "cover",
-            borderRadius: 5,
-            boxShadow: "0 25px 50px rgba(0,0,0,0.1)",
-          }}
-        />
-      </Box>
-    </Box>
-  </Container>
-</Box>
     </>
   );
 };
