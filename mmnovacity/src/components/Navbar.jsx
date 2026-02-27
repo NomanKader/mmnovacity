@@ -24,27 +24,44 @@ export default function Navbar() {
   ]
 
   return (
+
     <AppBar
       position="sticky"
       elevation={0}
       sx={{
-        bgcolor: "white",
-        borderBottom: "1px solid #eee",
+        // bgcolor: "white",
+        // borderBottom: "1px solid #eee",
+            bgcolor: "#fff",
+            borderBottom: "1px solid rgba(15, 23, 42, 0.08)",
+            px: { xs: 1, md: 8 },
+            
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+
+      {/* <Toolbar sx={{ justifyContent: "space-between" }}> */}
+        <Toolbar
+            sx={{
+            justifyContent: "space-between",
+            minHeight: { xs: 52, md: 79 },
+            gap: 2,
+            }}
+        >
         {/* ===== LEFT LOGO ===== */}
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
           <Box
             component="img"
             src={logo}
             alt="logo"
-            sx={{ width: 35 }}
+            sx={{ width: 38, height: 28, borderRadius: 2 }}
           />
           <Typography
-            variant="h6"
-            fontWeight="bold"
-            sx={{ color: "black" }}
+            variant="h5"
+            sx={{
+                color: "#0f172a",
+                fontWeight: 800,
+                // letterSpacing: "-0.02em",
+                fontSize: { xs: 20, md: 24 },
+            }}
           >
             NovaCity
           </Typography>
@@ -55,7 +72,10 @@ export default function Navbar() {
           sx={{
             display: { xs: "none", md: "flex" },
             alignItems: "center",
-            gap: 2,
+            gap: 2.0,
+            py: { xs: 1, md: 5 },
+            py: { xs: 0, md: 0 },
+
           }}
         >
           {navItems.map((item) => (
@@ -64,10 +84,17 @@ export default function Navbar() {
               component={NavLink}
               to={item.path}
               sx={{
-                color: "black",
+                color: "#334155",
                 fontWeight: 500,
+                textTransform: "none",
+                fontSize: 15,
+                px: 1,
+                "&:hover": {
+                    bgcolor: "transparent",
+                    color: "#0f172a",
+                },
                 "&.active": {
-                  color: "primary.main",
+                    color: "#ff7a00",
                 },
               }}
             >
@@ -78,10 +105,12 @@ export default function Navbar() {
           <Button
             variant="contained"
             sx={{
-              bgcolor: "primary.main",
-              borderRadius: 5,
-              px: 3,
-              textTransform: "none",
+                bgcolor: "#ff7a00",
+                borderRadius: 999,
+                px: 3.2,
+                py: 0.9,
+                textTransform: "none",
+                
             }}
           >
             Get Started
