@@ -11,7 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu"
 import { NavLink } from "react-router"
 import { useState } from "react"
-import logo from "../assets/react.svg" // change to your real logo if needed
+import logo from "../assets/Novacity_logo.png"
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -51,8 +51,12 @@ export default function Navbar() {
           <Box
             component="img"
             src={logo}
-            alt="logo"
-            sx={{ width: 38, height: 28, borderRadius: 2 }}
+            alt="NovaCity Logo"
+            sx={{
+              height: 40,
+              width: "auto",
+              objectFit: "contain",
+            }}
           />
           <Typography
             variant="h5"
@@ -73,8 +77,8 @@ export default function Navbar() {
             display: { xs: "none", md: "flex" },
             alignItems: "center",
             gap: 2.0,
-            py: { xs: 1, md: 5 },
-            py: { xs: 0, md: 0 },
+            px: { xs: 1, md: 5 },
+        
 
           }}
         >
@@ -104,16 +108,23 @@ export default function Navbar() {
 
           <Button
             variant="contained"
+            component="a"
+            href="https://apps.apple.com"
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
                 bgcolor: "#ff7a00",
                 borderRadius: 999,
                 px: 3.2,
                 py: 0.9,
                 textTransform: "none",
-                
+                boxShadow: "0 3px 5px rgba(255,122,0,0.35)",
+                "&:hover": {
+                    bgcolor: "#e96f00",
+                },               
             }}
           >
-            Get Started
+            Get App
           </Button>
         </Box>
 
