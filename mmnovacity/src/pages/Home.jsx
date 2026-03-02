@@ -30,7 +30,7 @@ const Home = () => {
           height: { xs: "50vh", md: "60vh" }, // top half feeling, responsive
           backgroundImage: `url(${buildingImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "top center", // 👈 important
+          backgroundPosition: "top center", //  important
           backgroundRepeat: "no-repeat",
           position: "relative",
           display: "flex",
@@ -82,9 +82,7 @@ const Home = () => {
           </Typography>
 
           <Button
-            component= "a"
-            href="https://apps.apple.com/us/iphone/today"
-            // onClick={() => navigate("/services")}
+            onClick={() => navigate("/services")}
             sx={{
               mt: 4,
               px: 4,
@@ -124,7 +122,7 @@ const Home = () => {
       {/* ================= STAY UPDATED ================= */}
 <Box
   sx={{
-    py: 18,
+    py: 10,
     backgroundColor: "#f8fafc",
   }}
 >
