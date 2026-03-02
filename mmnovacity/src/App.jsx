@@ -7,10 +7,12 @@ import Contact from "./pages/Contact"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
 import ScrollToTopButton from "./components/ScrollToTopButton"
+import AlwaysOnTop from "./components/AlwaysOnTop";
 
 function App() {
   return (
     <>
+        <AlwaysOnTop />
       <Navbar />
 
       <Routes>
@@ -18,7 +20,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
-        
+      
       </Routes>
       <Footer/>
       <ScrollToTopButton />
