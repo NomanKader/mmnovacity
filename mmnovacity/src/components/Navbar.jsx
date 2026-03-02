@@ -88,12 +88,12 @@ const handleAppRedirect = () => {
         {/* ===== DESKTOP MENU ===== */}
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
+            display: "flex",
             alignItems: "center",
-            gap: 2.0,
+            gap: { xs: 1, md: 2 },
             px: { xs: 1, md: 5 },
-        
-
+            flexWrap: "nowrap",           //  prevent wrapping
+            overflowX: "auto",            // allow horizontal scroll if needed
           }}
         >
           {navItems.map((item) => (
@@ -105,7 +105,7 @@ const handleAppRedirect = () => {
                 color: "#334155",
                 fontWeight: 500,
                 textTransform: "none",
-                fontSize: 15,
+                fontSize: { xs: 13, md: 15 },
                 px: 1,
                 "&:hover": {
                     bgcolor: "transparent",
@@ -126,8 +126,9 @@ const handleAppRedirect = () => {
             sx={{
               bgcolor: "#ff7a00",
               borderRadius: 999,
-              px: 3.2,
-              py: 0.9,
+              px: { xs: 2, md: 3.2 },
+              py: { xs: 0.6, md: 0.9 },
+              fontSize: { xs: 13, md: 15 },
               textTransform: "none",
               boxShadow: "0 3px 5px rgba(255,122,0,0.35)",
               "&:hover": {
@@ -140,15 +141,15 @@ const handleAppRedirect = () => {
         </Box>
 
         {/* ===== MOBILE MENU ICON ===== */}
-        <IconButton
+        {/* <IconButton
           sx={{ display: { xs: "flex", md: "none" }, color: "black" }}
           onClick={(e) => setAnchorEl(e.currentTarget)}
         >
           <MenuIcon />
-        </IconButton>
+        </IconButton> */}
 
         {/* ===== MOBILE DROPDOWN ===== */}
-        <Menu
+        {/* <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={() => setAnchorEl(null)}
@@ -163,7 +164,7 @@ const handleAppRedirect = () => {
               {item.label}
             </MenuItem>
           ))}
-        </Menu>
+        </Menu> */}
       </Toolbar>
     </AppBar>
   )
