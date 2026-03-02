@@ -7,6 +7,7 @@ import {
   Divider,
   Stack,
   Link as MuiLink,
+  Fab,
 } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -87,15 +88,35 @@ export default function Footer() {
               <Box sx={{ display: "flex", gap: 1 }}>
                 <PhoneIcon fontSize="small" />
                 <Typography fontSize={14}>
-                  +959987659275
-                  <br />
-                  +959765900318
+                  <Box
+                    component="a"
+                    href="tel:+959987659275"
+                    sx={{ color: "white", textDecoration: "none", display: "block", "&:hover": { textDecoration: "underline" } }}
+                  >
+                    +959987659275
+                  </Box>
+                  <Box
+                    component="a"
+                    href="tel:+959765900318"
+                    sx={{ color: "white", textDecoration: "none", display: "block", "&:hover": { textDecoration: "underline" } }}
+                  >
+                    +959765900318
+                  </Box>
                 </Typography>
               </Box>
 
               <Box sx={{ display: "flex", gap: 1 }}>
                 <MailIcon fontSize="small" />
-                <Typography fontSize={14}>
+                <Typography
+                  component="a"
+                  href="mailto:info@novacity.com"
+                  fontSize={14}
+                  sx={{
+                    color: "white",
+                    textDecoration: "none",
+                    "&:hover": { textDecoration: "underline" },
+                  }}
+                >
                   info@novacity.com
                 </Typography>
               </Box>
@@ -138,63 +159,38 @@ export default function Footer() {
           <Typography fontSize={14} sx={{ opacity: 0.9 }}>
             © {new Date().getFullYear()} NovaCity. All rights reserved.
           </Typography>
-
-          <Box sx={{ display: "flex", flexDirection: "column", alignItems: { xs: "center", sm: "flex-end" }, gap: 1 }}>
-          <Button
-            variant="contained"
-            component="a"
-            href="https://www.viber.com/en/download/"
-            target="_blank"
-            rel="noopener noreferrer"
-            startIcon={
-              <Box
-                component="img"
-                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg"
-                sx={{
-                  width: 18,
-                  height: 18,
-                  filter: "invert(1)",
-                }}
-              />
-            }
-            sx={{
-              bgcolor: "#7360F2",
-              color: "white",
-              borderRadius: "999px",
-              px: 3,
-              py: 1,
-              fontWeight: 800,
-              textTransform: "none",
-              boxShadow: "0 10px 25px rgba(115, 96, 242, 0.35)",
-              "&:hover": {
-                bgcolor: "#5b4bd6",
-                boxShadow: "0 12px 28px rgba(115, 96, 242, 0.45)",
-              },
-            }}
-          >
-            Contact Us
-          </Button>
-
-          <Typography
-            component="a"
-            href="https://www.nksoftwarehouse.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              fontSize: 13,
-              opacity: 0.9,
-              color: "white",
-              textDecoration: "none",
-              "&:hover": {
-                textDecoration: "underline",
-              },
-            }}
-          >
-            Powered by NK Software House
-          </Typography>
-        </Box>
         </Box>
       </Container>
+
+      {/* Floating Viber Button (BOTTOM RIGHT) */}
+      <Fab
+        component="a"
+        href="https://www.viber.com/en/download/"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          position: "fixed",
+          bottom: 30,
+          right: 30,
+          bgcolor: "#7360F2",
+          color: "#fff",
+          zIndex: 1300,
+          boxShadow: "0 8px 20px rgba(115, 96, 242, 0.4)",
+          "&:hover": {
+            bgcolor: "#5b4bd6",
+          },
+        }}
+      >
+        <Box
+          component="img"
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg"
+          sx={{
+            width: 22,
+            height: 22,
+            filter: "invert(1)",
+          }}
+        />
+      </Fab>
     </Box>
   );
 }

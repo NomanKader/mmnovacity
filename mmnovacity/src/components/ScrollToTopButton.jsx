@@ -30,14 +30,14 @@ export default function ScrollToTopButton() {
       <Fab
         onClick={scrollToTop}
         sx={{
-          position: "fixed",
-          bottom: 30,
-          right: 30,
-          bgcolor: "#0e878c",
-          color: "#fff",
-          "&:hover": {
+            position: "fixed",
+            bottom: 100,
+            right: 30,
             bgcolor: "#0e878c",
-          },
+            color: "#fff",
+            "&:hover": {
+                bgcolor: "#0e878c",
+            },
         }}
       >
         <KeyboardArrowUpIcon />
