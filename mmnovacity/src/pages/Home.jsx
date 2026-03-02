@@ -20,7 +20,26 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import buildingImg from "../assets/photos/building.jpg";
 import iphoneImg from "../assets/photos/iphone.jpg";
 const Home = () => {
-  const navigate = useNavigate();
+
+  // ✅ PROFESSIONAL APP REDIRECT
+  const handleAppRedirect = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Replace with REAL app links when published
+    const playStoreUrl =
+      "https://play.google.com/store/apps";
+    const appStoreUrl =
+      "https://apps.apple.com/";
+
+    if (/android/i.test(userAgent)) {
+      window.open(playStoreUrl, "_blank");
+    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      window.open(appStoreUrl, "_blank");
+    } else {
+      // Desktop fallback
+      window.open(playStoreUrl, "_blank");
+    }
+  };
 
   return (
     <>
@@ -81,8 +100,8 @@ const Home = () => {
             Your Trusted Real Estate Partner in Myanmar
           </Typography>
 
-          <Button
-            onClick={() => navigate("/services")}
+<Button
+            onClick={handleAppRedirect}
             sx={{
               mt: 4,
               px: 4,

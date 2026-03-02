@@ -17,6 +17,23 @@ import serviceHouse from "../assets/photos/servicehouse.jpg"
 import serviceCouch from "../assets/photos/servicecouch.jpg"
 import serviceMeet from "../assets/photos/servicemeet.jpg"
 
+const handleAppRedirect = () => {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  const playStoreUrl =
+    "https://play.google.com/store/apps"; // change later to real app
+  const appStoreUrl =
+    "https://www.apple.com/app-store/"; // change later to real app
+
+ if (/android/i.test(userAgent)) {
+    window.open(playStoreUrl, "_blank");
+  } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+    window.open(appStoreUrl, "_blank");
+  } else {
+    window.open(playStoreUrl, "_blank");
+  }
+};
+
 export default function Services() {
   return (
     <>
@@ -75,7 +92,7 @@ export default function Services() {
                     mr: 2
                   }}
                 >
-                  <HomeIcon sx={{ color: "#2f7f77" }} />
+                  <HomeIcon sx={{ fontSize: 55, color: "#2f7f77" }} />
                 </Box>
               </Box>
 
@@ -96,7 +113,7 @@ export default function Services() {
                 "Negotiation assistance"
               ].map((item, index) => (
                 <Box key={index} display="flex" mb={2}>
-                  <CheckCircleIcon sx={{ color: "#2f7f77", mr: 2 }} />
+                  <CheckCircleIcon sx={{   color: "#2f7f77", mr: 2 }} />
                   <Typography>{item}</Typography>
                 </Box>
               ))}
@@ -157,7 +174,7 @@ export default function Services() {
                   mb: 3
                 }}
               >
-                <ApartmentIcon sx={{ color: "#2f7f77" }} />
+                <ApartmentIcon sx={{  fontSize: 55, color: "#2f7f77" }} />
               </Box>
 
               <Typography variant="h5" fontWeight="bold" mb={3}>
@@ -176,7 +193,7 @@ export default function Services() {
                 "Maintenance coordination"
               ].map((item, index) => (
                 <Box key={index} display="flex" mb={2}>
-                  <CheckCircleIcon sx={{ color: "#2f7f77", mr: 2 }} />
+                  <CheckCircleIcon sx={{  color: "#2f7f77", mr: 2 }} />
                   <Typography>{item}</Typography>
                 </Box>
               ))}
@@ -213,7 +230,7 @@ export default function Services() {
                   mb: 3
                 }}
               >
-                <HandshakeIcon sx={{ color: "#2f7f77" }} />
+                <HandshakeIcon sx={{ fontSize: 55, color: "#2f7f77" }} />
               </Box>
 
               <Typography variant="h5" fontWeight="bold" mb={3}>
@@ -398,8 +415,7 @@ export default function Services() {
     >
       {/* Browse Properties */}
       <Button
-        component={Link}
-        to="/"
+        onClick={handleAppRedirect}
         sx={{
           px: 6,
           py: 2,

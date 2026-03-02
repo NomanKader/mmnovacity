@@ -92,34 +92,61 @@ export default function About() {
                 bg: "#e8eef7"
               }
             ].map((item, index) => (
-              <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Box textAlign="center">
-                  <Box
-                    sx={{
-                      width: 120,
-                      height: 120,
-                      borderRadius: "50%",
-                      backgroundColor: item.bg,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: "0 auto",
-                      mb: 3
-                    }}
-                  >
-                    {item.icon}
-                  </Box>
+            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
+              <Box
+                textAlign="center"
+                sx={{
+                  opacity: 0,
+                  animation: `fadeUp 0.8s ease forwards`,
+                  animationDelay: `${index * 0.3}s`,
 
-                  <Typography variant="h6" fontWeight="bold" mb={2}>
-                    {item.title}
-                  </Typography>
+                  "@keyframes fadeUp": {
+                    "0%": {
+                      opacity: 0,
+                      transform: "translateY(30px)"
+                    },
+                    "100%": {
+                      opacity: 1,
+                      transform: "translateY(0)"
+                    }
+                  }
+                }}
+              >
+                {/* ICON CIRCLE */}
+                <Box
+                  sx={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: "50%",
+                    backgroundColor: item.bg,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto",
+                    mb: 3,
 
-                  <Typography color="text.secondary">
-                    {item.text}
-                  </Typography>
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    cursor: "pointer",
+
+                    "&:hover": {
+                      transform: "scale(1.12)",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.15)"
+                    }
+                  }}
+                >
+                  {item.icon}
                 </Box>
-              </Grid>
-            ))}
+
+      <Typography variant="h6" fontWeight="bold" mb={2}>
+        {item.title}
+      </Typography>
+
+      <Typography color="text.secondary">
+        {item.text}
+      </Typography>
+    </Box>
+  </Grid>
+))}
           </Grid>
         </Container>
       </Box>

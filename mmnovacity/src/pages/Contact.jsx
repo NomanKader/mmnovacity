@@ -15,6 +15,7 @@ import {
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import meetingRoom from "../assets/photos/meeting_room.jpg";
 
 export default function Contact() {
   const interests = useMemo(
@@ -59,8 +60,16 @@ export default function Contact() {
             height: "100%",
             minHeight: { xs: 240, md: 280 },
             overflow: "hidden",
+
+            transition: "transform 0.35s ease, box-shadow 0.35s ease",
+            cursor: "pointer",
+
+            "&:hover": {
+            transform: "scale(1.04)",
+            boxShadow: "0 25px 60px rgba(12, 18, 30, 0.18)",
+            },
         }}
-    >
+        >
         <Stack spacing={1.7}>
             <Box
                 sx={{
@@ -92,20 +101,25 @@ export default function Contact() {
             {title}
             </Typography>
 
-            <Stack spacing={0.8}>
             {lines.map((t, idx) => (
-                <Typography
+            <Typography
                 key={idx}
+                component="a"
+                href={title === "Call Us" ? `tel:${t}` : undefined}
                 sx={{
-                    fontSize: 14.5,
-                    color: "rgba(15, 23, 42, 0.80)",
-                    lineHeight: 1.55,
+                fontSize: 14.5,
+                color: "rgba(15, 23, 42, 0.80)",
+                lineHeight: 1.55,
+                textDecoration: "none",
+                cursor: title === "Call Us" ? "pointer" : "default",
+                "&:hover": {
+                    color: title === "Call Us" ? accent : "inherit",
+                },
                 }}
-                >
+            >
                 {t}
-                </Typography>
+            </Typography>
             ))}
-            </Stack>
         </Stack>
     </Paper>
   );
@@ -114,13 +128,29 @@ export default function Contact() {
         <Box sx={{ width: "100%" }}>
         {/* Hero */}
         <Box
-            sx={{
-            width: "100%",
-            background:
-                "radial-gradient(1100px 520px at 40% 25%, rgba(90,120,255,0.22), transparent 60%), linear-gradient(135deg, #0b1220 0%, #0f274d 55%, #0b1220 100%)",
-            py: { xs: 10, md: 18 },
-            }}
-        >
+  sx={{
+    width: "100%",
+    position: "relative",
+    backgroundImage: `url(${meetingRoom})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    py: { xs: 10, md: 18 },
+    display: "flex",
+    alignItems: "center",
+  }}
+>
+  {/* Dark Overlay */}
+  <Box
+    sx={{
+      position: "absolute",
+      inset: 0,
+      background:
+        "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75))",
+    }}
+  />
+
+  <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
             <Container maxWidth="lg">
             <Stack spacing={1.4} alignItems="center" textAlign="center">
                 <Typography
@@ -146,6 +176,7 @@ export default function Contact() {
                 We’re here to help you find your perfect property
                 </Typography>
             </Stack>
+            </Container>
             </Container>
         </Box>
 
