@@ -6,6 +6,7 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
+import ScrollToTopButton from "./components/ScrollToTopButton"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         
       </Routes>
       <Footer/>
+      <ScrollToTopButton />
     </>
   )
 }
