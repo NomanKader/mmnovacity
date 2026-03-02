@@ -163,7 +163,8 @@ export default function Contact() {
             disableGutters
             sx={{
                 width: "100%",
-                px: { xs: 2, sm: 4, md: 6, lg: 8, xl: 10 },
+                px: { xs: 3, sm: 4, md: 6, lg: 8, xl: 10 },
+                
             }}
             >
             {/*  wrapper of 3 cards */}
@@ -180,7 +181,7 @@ export default function Contact() {
                     width: "100%",
                     display: "grid",
                     gridTemplateColumns: { xs: "1fr", md: "repeat(3, minmax(0, 1fr))" },
-                    gap: { xs: 3, md: 4 },
+                    gap: { xs: 10, md: 4 },
                     alignItems: "stretch",
                 }}
                 >

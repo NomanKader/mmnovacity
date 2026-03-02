@@ -82,7 +82,9 @@ const Home = () => {
           </Typography>
 
           <Button
-            onClick={() => navigate("/services")}
+            component= "a"
+            href="https://apps.apple.com/us/iphone/today"
+            // onClick={() => navigate("/services")}
             sx={{
               mt: 4,
               px: 4,
@@ -325,7 +327,7 @@ const Home = () => {
         mb: 8,
       }}
     >
-      • OUR SERVICES
+      OUR SERVICES
     </Typography>
 
     <Grid

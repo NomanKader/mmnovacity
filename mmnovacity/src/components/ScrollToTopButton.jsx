@@ -33,10 +33,10 @@ export default function ScrollToTopButton() {
           position: "fixed",
           bottom: 30,
           right: 30,
-          bgcolor: "#ff7a00",
+          bgcolor: "#0e878c",
           color: "#fff",
           "&:hover": {
-            bgcolor: "#e96f00",
+            bgcolor: "#0e878c",
           },
         }}
       >

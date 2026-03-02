@@ -58,7 +58,7 @@ export default function Navbar() {
               objectFit: "contain",
             }}
           />
-          <Typography
+          {/* <Typography
             variant="h5"
             sx={{
                 color: "#0f172a",
@@ -68,7 +68,7 @@ export default function Navbar() {
             }}
           >
             NovaCity
-          </Typography>
+          </Typography> */}
         </Box>
 
         {/* ===== DESKTOP MENU ===== */}
