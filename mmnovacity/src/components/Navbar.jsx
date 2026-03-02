@@ -22,7 +22,21 @@ export default function Navbar() {
     { label: "Services", path: "/services" },
     { label: "Contact", path: "/contact" },
   ]
+const handleAppRedirect = () => {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera
 
+  const playStoreUrl = "https://play.google.com/store/apps"
+  const appStoreUrl = "https://apps.apple.com"
+
+  if (/android/i.test(userAgent)) {
+    window.open(playStoreUrl, "_blank")
+  } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+    window.open(appStoreUrl, "_blank")
+  } else {
+    // Desktop fallback
+    window.open(playStoreUrl, "_blank")
+  }
+}
   return (
 
     <AppBar
@@ -108,20 +122,17 @@ export default function Navbar() {
 
           <Button
             variant="contained"
-            component="a"
-            href="https://apps.apple.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={handleAppRedirect}
             sx={{
-                bgcolor: "#ff7a00",
-                borderRadius: 999,
-                px: 3.2,
-                py: 0.9,
-                textTransform: "none",
-                boxShadow: "0 3px 5px rgba(255,122,0,0.35)",
-                "&:hover": {
-                    bgcolor: "#e96f00",
-                },               
+              bgcolor: "#ff7a00",
+              borderRadius: 999,
+              px: 3.2,
+              py: 0.9,
+              textTransform: "none",
+              boxShadow: "0 3px 5px rgba(255,122,0,0.35)",
+              "&:hover": {
+                bgcolor: "#e96f00",
+              },
             }}
           >
             Get App
