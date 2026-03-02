@@ -401,26 +401,25 @@ const Home = () => {
             </Typography>
 
             <Button
-              variant={item.primary ? "contained" : "outlined"}
-              sx={{
-                borderRadius: "40px",
-                px: 6,
-                py: 1.6,
-                fontWeight: 600,
-                fontSize: 15,
-                textTransform: "none",
-                backgroundColor: item.primary ? "#0f172a" : "transparent",
-                borderColor: "#0f172a",
-                color: item.primary ? "#ffffff" : "#0f172a",
-                "&:hover": {
-                  backgroundColor: item.primary
-                    ? "#1e293b"
-                    : "#f1f5f9",
-                },
-              }}
-            >
-              LEARN MORE
-            </Button>
+            onClick={() => navigate("/services")}
+            variant={item.primary ? "contained" : "outlined"}
+            sx={{
+              borderRadius: "40px",
+              px: 6,
+              py: 1.6,
+              fontWeight: 600,
+              fontSize: 15,
+              textTransform: "none",
+              backgroundColor: item.primary ? "#0f172a" : "transparent",
+              borderColor: "#0f172a",
+              color: item.primary ? "#ffffff" : "#0f172a",
+              "&:hover": {
+                backgroundColor: item.primary ? "#1e293b" : "#f1f5f9",
+              },
+            }}
+          >
+            LEARN MORE
+          </Button>
 
             <Typography
               sx={{

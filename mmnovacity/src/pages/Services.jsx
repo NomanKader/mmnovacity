@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import {
   Box,
   Container,
@@ -101,16 +102,19 @@ export default function Services() {
               ))}
 
               <Button
-                variant="contained"
-                sx={{
-                  mt: 3,
-                  backgroundColor: "#e8742b",
-                  borderRadius: "30px",
-                  px: 4
-                }}
-              >
-                Contact Us
-              </Button>
+              component={Link}
+              to="/contact"
+              variant="contained"
+              sx={{
+                mt: 3,
+                backgroundColor: "#e8742b",
+                borderRadius: "30px",
+                px: 4,
+                textDecoration: "none"
+              }}
+            >
+              Contact Us
+            </Button>
             </Grid>
 
             <Grid size={{ xs: 12, md: 6 }}>
@@ -178,16 +182,19 @@ export default function Services() {
               ))}
 
               <Button
-                variant="contained"
-                sx={{
-                  mt: 3,
-                  backgroundColor: "#e8742b",
-                  borderRadius: "30px",
-                  px: 4
-                }}
-              >
-                Contact Us
-              </Button>
+              component={Link}
+              to="/contact"
+              variant="contained"
+              sx={{
+                mt: 3,
+                backgroundColor: "#e8742b",
+                borderRadius: "30px",
+                px: 4,
+                textDecoration: "none"
+              }}
+            >
+              Contact Us
+            </Button>
             </Grid>
           </Grid>
 
@@ -351,6 +358,90 @@ export default function Services() {
                     </Box>
             </Container>
         </Box>
+        {/* ================= CTA SECTION ================= */}
+<Box
+  sx={{
+    py: 12,
+    background: "linear-gradient(135deg, #f97316, #ea580c)",
+    textAlign: "center",
+    color: "#fff"
+  }}
+>
+  <Container maxWidth="md">
+    <Typography
+      sx={{
+        fontSize: { xs: 32, md: 52 },
+        fontWeight: 800,
+        mb: 3
+      }}
+    >
+      Ready to Find Your Property?
+    </Typography>
+
+    <Typography
+      sx={{
+        fontSize: 18,
+        opacity: 0.95,
+        mb: 6
+      }}
+    >
+      Let us help you discover the perfect home or investment opportunity in Yangon
+    </Typography>
+
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        gap: 4,
+        flexWrap: "wrap"
+      }}
+    >
+      {/* Browse Properties */}
+      <Button
+        component={Link}
+        to="/"
+        sx={{
+          px: 6,
+          py: 2,
+          borderRadius: "50px",
+          fontWeight: 600,
+          fontSize: 16,
+          backgroundColor: "#ffffff",
+          color: "#ea580c",
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: "#f3f4f6"
+          }
+        }}
+      >
+        Browse Properties
+      </Button>
+
+      {/* Contact Us */}
+      <Button
+        component={Link}
+        to="/contact"
+        variant="outlined"
+        sx={{
+          px: 6,
+          py: 2,
+          borderRadius: "50px",
+          fontWeight: 600,
+          fontSize: 16,
+          color: "#ffffff",
+          borderColor: "#ffffff",
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: "rgba(255,255,255,0.15)",
+            borderColor: "#ffffff"
+          }
+        }}
+      >
+        Contact Us
+      </Button>
+    </Box>
+  </Container>
+</Box>
     </>
   )
 }
