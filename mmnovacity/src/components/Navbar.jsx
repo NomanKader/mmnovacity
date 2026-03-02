@@ -67,7 +67,7 @@ const handleAppRedirect = () => {
             src={logo}
             alt="NovaCity Logo"
             sx={{
-              height: 40,
+              height: { xs: 32, md: 40 },
               width: "auto",
               objectFit: "contain",
             }}
@@ -87,15 +87,17 @@ const handleAppRedirect = () => {
 
         {/* ===== DESKTOP MENU ===== */}
         <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: { xs: 1, md: 2 },
-            px: { xs: 1, md: 5 },
-            flexWrap: "nowrap",           //  prevent wrapping
-            overflowX: "auto",            // allow horizontal scroll if needed
-          }}
-        >
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: { xs: 1.2, md: 2 },
+              flexWrap: "nowrap",          //  no wrapping
+              overflowX: "auto",           // scroll if very small screen
+              whiteSpace: "nowrap",  // prevent text break
+              // pr: 4,  
+              // minWidth: "max-content",      
+            }}
+          >
           {navItems.map((item) => (
             <Button
               key={item.label}
@@ -105,6 +107,7 @@ const handleAppRedirect = () => {
                 color: "#334155",
                 fontWeight: 500,
                 textTransform: "none",
+                whiteSpace: "nowrap",
                 fontSize: { xs: 13, md: 15 },
                 px: 1,
                 "&:hover": {
@@ -129,7 +132,9 @@ const handleAppRedirect = () => {
               px: { xs: 2, md: 3.2 },
               py: { xs: 0.6, md: 0.9 },
               fontSize: { xs: 13, md: 15 },
-              textTransform: "none",
+              minWidth: "auto",           // important
+              whiteSpace: "nowrap",
+              mr: 2,
               boxShadow: "0 3px 5px rgba(255,122,0,0.35)",
               "&:hover": {
                 bgcolor: "#e96f00",
