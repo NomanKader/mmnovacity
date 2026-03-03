@@ -150,8 +150,8 @@ export default function Contact() {
     }}
   />
 
-  <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
-            <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+        <Container maxWidth="lg">
             <Stack spacing={1.4} alignItems="center" textAlign="center">
                 <Typography
                 sx={{
@@ -252,7 +252,7 @@ export default function Contact() {
                 </Box>
 
                 {/* Map */}
-                <Box sx={{ mt: { xs: 8, md: 16 }, width: "100%" }}>
+                <Box sx={{ mt: { xs: 12, md: 16 }, width: "100%" }}>
                 <Paper
                     elevation={0}
                     sx={{
@@ -278,7 +278,7 @@ export default function Contact() {
                 </Paper>
                 </Box>
             </Box>
-            </Container>
+        </Container>
         </Box>
         </Box>
     );

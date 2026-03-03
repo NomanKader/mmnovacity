@@ -85,14 +85,14 @@ const handleAppRedirect = () => {
           </Typography> */}
         </Box>
 
-        {/* ===== DESKTOP MENU ===== */}
+        {/* ===== Moblie MENU ===== */}
         <Box
             sx={{
               display: "flex",
               alignItems: "center",
               gap: { xs: 1.2, md: 2 },
               flexWrap: "nowrap",          //  no wrapping
-              overflowX: "auto",           // scroll if very small screen
+            //   overflowX: "auto",           // scroll if very small screen
               whiteSpace: "nowrap",  // prevent text break
               // pr: 4,  
               // minWidth: "max-content",      
@@ -127,15 +127,16 @@ const handleAppRedirect = () => {
             variant="contained"
             onClick={handleAppRedirect}
             sx={{
+              display: { xs: "none", md: "inline-flex" },
               bgcolor: "#ff7a00",
               borderRadius: 999,
               px: { xs: 2, md: 3.2 },
               py: { xs: 0.6, md: 0.9 },
-              fontSize: { xs: 13, md: 15 },
+              fontSize: { xs: 12, md: 14 },
               minWidth: "auto",           // important
               whiteSpace: "nowrap",
               mr: 2,
-              boxShadow: "0 3px 5px rgba(255,122,0,0.35)",
+              boxShadow: "1px 3px 5px rgba(255,122,0,0.35)",
               "&:hover": {
                 bgcolor: "#e96f00",
               },

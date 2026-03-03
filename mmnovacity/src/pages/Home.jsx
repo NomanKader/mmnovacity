@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -19,7 +19,10 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 import buildingImg from "../assets/photos/building.jpg";
 import iphoneImg from "../assets/photos/iphone.jpg";
+
+
 const Home = () => {
+  const navigate = useNavigate();
 
   // ✅ PROFESSIONAL APP REDIRECT
   const handleAppRedirect = () => {
@@ -231,13 +234,17 @@ const Home = () => {
             >
               <Box
                 sx={{
-                  width: 50,
-                  height: 50,
+                  width: 60,
+                  height: 60,
+                  minWidth: 60,
+                  minHeight: 60,
                   borderRadius: "50%",
+                  aspectRatio: "1 / 1",
                   backgroundColor: item.bg,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  flexShrink: 0,
                 }}
               >
                 {item.icon}
@@ -325,10 +332,12 @@ const Home = () => {
   </Container>
 </Box>
 
-{/* ================= OUR SERVICES (FINAL MATCH) ================= */}
+
+{/* OUR SERVICES */}
+
 <Box
   sx={{
-    pt: 2,      // 🔥 reduce top gap from previous section
+    pt: 1,      // 🔥 reduce top gap from previous section
     pb: 2,
     backgroundColor: "#f8fafc",
   }}
@@ -376,7 +385,7 @@ const Home = () => {
         <Grid item xs={12} md={4} key={index}>
           <Card
             sx={{
-              p: 12,                       // 🔥 bigger padding
+              p: 12,                       //  bigger padding
               borderRadius: 2,
               textAlign: "center",
               boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
@@ -387,7 +396,7 @@ const Home = () => {
             {/* Icon Box */}
             <Box
               sx={{
-                height: 120,              // 🔥 bigger icon area
+                height: 120,              //  bigger icon area
                 borderRadius: 4,
                 backgroundColor: "#eef2f7",
                 display: "flex",
@@ -420,22 +429,22 @@ const Home = () => {
             </Typography>
 
             <Button
-            onClick={() => navigate("/services")}
-            variant={item.primary ? "contained" : "outlined"}
-            sx={{
-              borderRadius: "40px",
-              px: 6,
-              py: 1.6,
-              fontWeight: 600,
-              fontSize: 15,
-              textTransform: "none",
-              backgroundColor: item.primary ? "#0f172a" : "transparent",
-              borderColor: "#0f172a",
-              color: item.primary ? "#ffffff" : "#0f172a",
-              "&:hover": {
-                backgroundColor: item.primary ? "#1e293b" : "#f1f5f9",
-              },
-            }}
+              onClick={() => navigate("/services")}
+              variant={item.primary ? "contained" : "outlined"}
+              sx={{
+                borderRadius: "40px",
+                px: 6,
+                py: 1.6,
+                fontWeight: 600,
+                fontSize: 15,
+                textTransform: "none",
+                backgroundColor: item.primary ? "#0f172a" : "transparent",
+                borderColor: "#0f172a",
+                color: item.primary ? "#ffffff" : "#0f172a",
+                "&:hover": {
+                  backgroundColor: item.primary ? "#1e293b" : "#f1f5f9",
+                },
+              }}
           >
             LEARN MORE
           </Button>
