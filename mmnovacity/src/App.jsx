@@ -8,6 +8,7 @@ import Home from "./pages/Home"
 import Services from "./pages/Services"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 import AlwaysOnTop from "./components/AlwaysOnTop";
+import "./index.css"
 
 
 

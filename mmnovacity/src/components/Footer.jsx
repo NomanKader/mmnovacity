@@ -148,19 +148,20 @@ export default function Footer() {
 
         {/* Bottom Row */}
         <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: { xs: "center", sm: "space-between" },
-            gap: 2,
-            flexWrap: "wrap",
-          }}
+            sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: { xs: "center", sm: "space-between" },
+                gap: 2,
+                flexWrap: "wrap",
+            }}
         >
           <Typography fontSize={14} sx={{ opacity: 0.9 }}>
             © {new Date().getFullYear()} NovaCity. All rights reserved.
           </Typography>
         </Box>
       </Container>
+
 
       {/* Floating Viber Button (BOTTOM RIGHT) */}
       <Fab
@@ -169,15 +170,17 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          position: "fixed",
-          bottom: 30,
-          right: 30,
-          bgcolor: "#7360F2",
-          color: "#fff",
-          zIndex: 1300,
-          boxShadow: "0 8px 20px rgba(115, 96, 242, 0.4)",
-          "&:hover": {
-            bgcolor: "#5b4bd6",
+            position: "fixed",
+            bottom: 30,
+            right: 30,
+            width: 70,
+            height: 70,
+            bgcolor: "#7360F2",
+            color: "#fff",
+            zIndex: 1300,
+            boxShadow: "0 10px 25px rgba(115, 96, 242, 0.4)",
+            "&:hover": {
+                bgcolor: "#5b4bd6",
           },
         }}
       >
@@ -185,8 +188,8 @@ export default function Footer() {
           component="img"
           src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg"
           sx={{
-            width: 22,
-            height: 22,
+            width: 28,
+            height: 28,
             filter: "invert(1)",
           }}
         />
