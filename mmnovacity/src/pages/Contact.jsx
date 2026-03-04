@@ -1,14 +1,12 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import {
   Box,
-  Button,
+//   Button,
   Container,
-  Divider,
-  Grid,
-  MenuItem,
+//   Divider,
+//   Grid,
   Paper,
   Stack,
-  TextField,
   Typography,
 } from "@mui/material";
 
@@ -28,23 +26,6 @@ export default function Contact() {
     []
   );
 
-//   const [form, setForm] = useState({
-//     name: "",
-//     email: "",
-//     phone: "",
-//     interest: "",
-//     message: "",
-//   });
-
-//   const handleChange = (key) => (e) => {
-//     setForm((prev) => ({ ...prev, [key]: e.target.value }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // UI-only (no backend yet)
-//     console.log("Contact form submit:", form);
-//   };
 
   const accent = "#f07f2a";
 
@@ -124,162 +105,176 @@ export default function Contact() {
     </Paper>
   );
 
-    return (
-        <Box sx={{ width: "100%" }}>
+return (
+    <Box sx={{ width: "100%" }}>
+
+
         {/* Hero */}
-        <Box
-  sx={{
-    width: "100%",
-    position: "relative",
-    backgroundImage: `url(${meetingRoom})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    py: { xs: 10, md: 18 },
-    display: "flex",
-    alignItems: "center",
-  }}
->
-  {/* Dark Overlay */}
-  <Box
-    sx={{
-      position: "absolute",
-      inset: 0,
-      background:
-        "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75))",
-    }}
-  />
 
-    <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
-        <Container maxWidth="lg">
-            <Stack spacing={1.4} alignItems="center" textAlign="center">
-                <Typography
-                sx={{
-                    fontWeight: 900,
-                    letterSpacing: "0.01em",
-                    color: "#fff",
-                    textTransform: "uppercase",
-                    fontSize: { xs: 38, sm: 52, md: 60 },
-                    lineHeight: 1.02,
-                }}
-                >
-                Get in touch
-                </Typography>
-
-                <Typography
-                sx={{
-                    color: "rgba(255,255,255,0.82)",
-                    maxWidth: 560,
-                    fontSize: { xs: 16.5, sm: 20.5 },
-                }}
-                >
-                We’re here to help you find your perfect property
-                </Typography>
-            </Stack>
-            </Container>
-            </Container>
-        </Box>
-
-        {/* Content */}
-        <Box
-            sx={{
+    <Box
+        sx={{
             width: "100%",
-            background: "#ffffff",
-            py: { xs: 7, md: 10 },
-            }}
-        >
-            {/* Full-width section, but CENTER the content area so it doesn't stick to the left */}
-            <Container
-            maxWidth={false}
-            disableGutters
-            sx={{
-                width: "100%",
-                px: { xs: 3, sm: 4, md: 6, lg: 8, xl: 10 },
-                
-            }}
-            >
-            {/*  wrapper of 3 cards */}
+            position: "relative",
+            backgroundImage: `url(${meetingRoom})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            py: { xs: 10, md: 18 },
+            display: "flex",
+            alignItems: "center",
+        }}
+    >
+
+
+    {/* Dark Overlay */}
+
+    <Box
+        sx={{
+        position: "absolute",
+        inset: 0,
+        background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.75))",
+        }}
+    />
+
+        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+            <Container maxWidth="lg">
+                <Stack spacing={1.4} alignItems="center" textAlign="center">
+                    <Typography
+                    sx={{
+                        fontWeight: 900,
+                        letterSpacing: "0.01em",
+                        color: "#fff",
+                        textTransform: "uppercase",
+                        fontSize: { xs: 38, sm: 52, md: 60 },
+                        lineHeight: 1.02,
+                    }}
+                    >
+                    Get in touch
+                    </Typography>
+
+                    <Typography
+                    sx={{
+                        color: "rgba(255,255,255,0.82)",
+                        maxWidth: 560,
+                        fontSize: { xs: 16.5, sm: 20.5 },
+                    }}
+                    >
+                    We’re here to help you find your perfect property
+                    </Typography>
+                </Stack>
+                </Container>
+                </Container>
+            </Box>
+
+
+
+            {/* Content */}
+
             <Box
                 sx={{
                 width: "100%",
-                maxWidth: 1400,
-                mx: "auto",
+                background: "#ffffff",
+                py: { xs: 7, md: 10 },
                 }}
-            >
-                {/* 3 info cards */}
-                <Box
+            >            
+                <Container
+                maxWidth={false}
+                disableGutters
                 sx={{
                     width: "100%",
-                    display: "grid",
-                    gridTemplateColumns: { xs: "1fr", md: "repeat(3, minmax(0, 1fr))" },
-                    gap: { xs: 10, md: 4 },
-                    alignItems: "stretch",
+                    px: { xs: 3, sm: 4, md: 6, lg: 8, xl: 10 },
+                    
                 }}
                 >
-                <Box sx={{ minWidth: 0, display: "flex" }}>
-                    <InfoCard
-                    bg="#fff3ea"
-                    icon={<PhoneInTalkOutlinedIcon sx={{ color: accent }} />}
-                    title="Call Us"
-                    lines={["+959987659275", "+959765900318"]}
-                    />
-                </Box>
 
-                <Box sx={{ minWidth: 0, display: "flex" }}>
-                    <InfoCard
-                    bg="#eafff8"
-                    icon={<PlaceOutlinedIcon sx={{ color: "#0ea5a4" }} />}
-                    title="Visit Our Office"
-                    lines={[
-                        "No (159/1), Myintar 10 Street, (14/1) Ward,",
-                        "South Okkalapa Township, Yangon, Myanmar",
-                    ]}
-                    />
-                </Box>
 
-                <Box sx={{ minWidth: 0, display: "flex" }}>
-                    <InfoCard
-                    bg="#eef5ff"
-                    icon={<AccessTimeOutlinedIcon sx={{ color: "#2563eb" }} />}
-                    title="Business Hours"
-                    lines={[
-                        "Monday - Friday: 9:00 AM - 6:00 PM",
-                        "Saturday: 9:00 AM - 4:00 PM",
-                        "Sunday: Closed",
-                    ]}
-                    />
-                </Box>
-                </Box>
+                {/*  wrapper of 3 cards */}
 
-                {/* Map */}
-                <Box sx={{ mt: { xs: 12, md: 16 }, width: "100%" }}>
-                <Paper
-                    elevation={0}
+                <Box
                     sx={{
                     width: "100%",
-                    borderRadius: 3,
-                    overflow: "hidden",
-                    boxShadow: "0 18px 45px rgba(12, 18, 30, 0.14)",
+                    maxWidth: 1400,
+                    mx: "auto",
                     }}
                 >
+                    {/* 3 info cards */}
                     <Box
-                    component="iframe"
-                    title="NovaCity Location"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
                     sx={{
                         width: "100%",
-                        height: { xs: 360, md: 520 },
-                        border: 0,
-                        display: "block",
+                        display: "grid",
+                        gridTemplateColumns: { xs: "1fr", md: "repeat(3, minmax(0, 1fr))" },
+                        gap: { xs: 10, md: 4 },
+                        alignItems: "stretch",
                     }}
-                    src="https://www.google.com/maps?q=South%20Okkalapa%20Township%20Yangon%20Myanmar&output=embed"
-                    />
-                </Paper>
+                    >
+                    <Box sx={{ minWidth: 0, display: "flex" }}>
+                        <InfoCard
+                        bg="#fff3ea"
+                        icon={<PhoneInTalkOutlinedIcon sx={{ color: accent }} />}
+                        title="Call Us"
+                        lines={["+959987659275", "+959765900318"]}
+                        />
+                    </Box>
+
+                    <Box sx={{ minWidth: 0, display: "flex" }}>
+                        <InfoCard
+                        bg="#eafff8"
+                        icon={<PlaceOutlinedIcon sx={{ color: "#0ea5a4" }} />}
+                        title="Visit Our Office"
+                        lines={[
+                            "No (159/1), Myintar 10 Street, (14/1) Ward,",
+                            "South Okkalapa Township, Yangon, Myanmar",
+                        ]}
+                        />
+                    </Box>
+
+                    <Box sx={{ minWidth: 0, display: "flex" }}>
+                        <InfoCard
+                        bg="#eef5ff"
+                        icon={<AccessTimeOutlinedIcon sx={{ color: "#2563eb" }} />}
+                        title="Business Hours"
+                        lines={[
+                            "Monday - Friday: 9:00 AM - 6:00 PM",
+                            "Saturday: 9:00 AM - 4:00 PM",
+                            "Sunday: Closed",
+                        ]}
+                        />
+                    </Box>
+                    </Box>
+
+
+
+                    {/* Map */}
+
+                    <Box sx={{ mt: { xs: 12, md: 16 }, width: "100%" }}>
+                    <Paper
+                        elevation={0}
+                        sx={{
+                        width: "100%",
+                        borderRadius: 3,
+                        overflow: "hidden",
+                        boxShadow: "0 18px 45px rgba(12, 18, 30, 0.14)",
+                        }}
+                    >
+                        <Box
+                        component="iframe"
+                        title="NovaCity Location"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        sx={{
+                            width: "100%",
+                            height: { xs: 360, md: 520 },
+                            border: 0,
+                            display: "block",
+                        }}
+                        src="https://www.google.com/maps?q=South%20Okkalapa%20Township%20Yangon%20Myanmar&output=embed"
+                        />
+                    </Paper>
+                    </Box>
                 </Box>
+            </Container>
             </Box>
-        </Container>
-        </Box>
-        </Box>
-    );
+            </Box>
+        );
 }

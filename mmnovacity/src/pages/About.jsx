@@ -16,7 +16,9 @@ import niceBuilding from "../assets/photos/nicebuilding.jpg"
 export default function About() {
   return (
     <>
-      {/* ================= HERO SECTION ================= */}
+
+      {/* === HERO SECTION === */}
+
         <Box
         sx={{
           height: "60vh",
@@ -31,7 +33,9 @@ export default function About() {
         }}
       >
       
+
         {/* Overlay */}
+
         <Box
           sx={{
             position: "absolute",
@@ -43,7 +47,9 @@ export default function About() {
           }}
         />
 
+
         {/* Content */}
+
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <Typography
             variant="h2"
@@ -59,7 +65,10 @@ export default function About() {
         </Box>
       </Box>
 
-      {/* ================= CORE VALUES ================= */}
+
+
+      {/* === CORE VALUES === */}
+
       <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: "#f5f5f5" }}>
         <Container>
           <Typography
@@ -112,7 +121,10 @@ export default function About() {
                   }
                 }}
               >
+
+
                 {/* ICON CIRCLE */}
+
                 <Box
                   sx={{
                     width: 120,
@@ -151,7 +163,11 @@ export default function About() {
         </Container>
       </Box>
 
-      {/* ================= WHY CHOOSE ================= */}
+
+
+
+      {/* ==== WHY CHOOSE === */}
+
       <Container sx={{ py: { xs: 6, md: 10 } }}>
         <Grid container spacing={6} alignItems="center">
           {/* LEFT TEXT */}
@@ -177,7 +193,9 @@ export default function About() {
             ))}
           </Grid>
 
+
           {/* RIGHT IMAGE */}
+
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               component="img"
@@ -193,7 +211,11 @@ export default function About() {
         </Grid>
       </Container>
 
-     {/* ================= ACHIEVEMENTS ================= */}
+
+
+
+     {/* ==== ACHIEVEMENTS ==== */}
+
 <Box sx={{ py: 10, backgroundColor: "#f5f5f5" }}>
   <Container>
     <Typography
@@ -207,10 +229,10 @@ export default function About() {
 
     <Grid container spacing={4} justifyContent="center">
       {[
-        { number: "500+", label: "Properties Sold", color: "#2f7f77" },   // green
-        { number: "1,200+", label: "Happy Clients", color: "#e8742b" },  // orange
-        { number: "15+", label: "Townships Covered", color: "#3f6fd8" }, // blue
-        { number: "5+", label: "Years Experience", color: "#3c8c40" }    // darker green
+        { number: "500+", label: "Properties Sold", color: "#2f7f77" },   
+        { number: "1,200+", label: "Happy Clients", color: "#e8742b" },  
+        { number: "15+", label: "Townships Covered", color: "#3f6fd8" },
+        { number: "5+", label: "Years Experience", color: "#3c8c40" }    
       ].map((item, index) => (
         <Grid key={index} size={{ xs: 6, md: 3 }}>
           <Box textAlign="center">

@@ -24,11 +24,12 @@ import iphoneImg from "../assets/photos/iphone.jpg";
 const Home = () => {
   const navigate = useNavigate();
 
-  // ✅ PROFESSIONAL APP REDIRECT
+
   const handleAppRedirect = () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    // Replace with REAL app links when published
+
+    // Replace with REAL app links 
     const playStoreUrl =
       "https://play.google.com/store/apps";
     const appStoreUrl =
@@ -39,20 +40,19 @@ const Home = () => {
     } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
       window.open(appStoreUrl, "_blank");
     } else {
-      // Desktop fallback
       window.open(playStoreUrl, "_blank");
     }
   };
 
   return (
     <>
-      {/* ================= HERO ================= */}
+
       <Box
         sx={{
-          height: { xs: "50vh", md: "60vh" }, // top half feeling, responsive
+          height: { xs: "50vh", md: "60vh" }, 
           backgroundImage: `url(${buildingImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "top center", //  important
+          backgroundPosition: "top center",
           backgroundRepeat: "no-repeat",
           position: "relative",
           display: "flex",
@@ -62,6 +62,7 @@ const Home = () => {
           color: "#fff",
         }}
       >
+
         {/* Overlay */}
         <Box
           sx={{
@@ -103,7 +104,8 @@ const Home = () => {
             Your Trusted Real Estate Partner in Myanmar
           </Typography>
 
-<Button
+
+          <Button
             onClick={handleAppRedirect}
             sx={{
               mt: 4,
@@ -141,7 +143,12 @@ const Home = () => {
           </Button>
         </Container>
       </Box>
-      {/* ================= STAY UPDATED ================= */}
+
+
+
+
+      {/* ==== STAY UPDATED === */}
+
 <Box
   sx={{
     py: 10,
@@ -178,14 +185,19 @@ const Home = () => {
       </Typography>
     </Box>
 
+
     {/* Content Row */}
+
     <Grid
       container
       spacing={10}
       alignItems="center"
       justifyContent="space-between"
     >
+
+
       {/* LEFT IMAGE */}
+
       <Grid item xs={12} md={6}>
         <Box
           component="img"
@@ -200,7 +212,9 @@ const Home = () => {
         />
       </Grid>
 
+
       {/* RIGHT CONTENT */}
+
       <Grid item xs={12} md={6}>
         <Box sx={{ maxWidth: 520 }}>
           {[
@@ -268,64 +282,73 @@ const Home = () => {
             </Box>
           ))}
 
-          {/* Download */}
-          <Typography
-            sx={{
-              mt: 8,
-              fontWeight: 600,
-              letterSpacing: 1,
-            }}
-          >
-            DOWNLOAD NOW
-          </Typography>
 
-          <Box sx={{ display: "flex", gap: 3, mt: 3 }}>
+
+          {/* Download */}
+
+        <Typography
+          sx={{
+            mt: 8,
+            fontWeight: 600,
+            letterSpacing: 1,
+          }}
+        >
+          DOWNLOAD NOW
+        </Typography>
+
+        <Box sx={{ display: "flex", gap: 3, mt: 3 }}>
+
+
+
   {/* Google Play */}
-  <Box
-    component="a"
-    href="https://play.google.com/store/games?device=windows"
-    target="_blank"
-    rel="noopener noreferrer"
-    sx={{ display: "inline-block" }}
-  >
-    <Box
-      component="img"
-      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-      alt="Get it on Google Play"
-      sx={{
-        height: 55,
-        cursor: "pointer",
-        transition: "transform 0.3s ease",
-        "&:hover": {
-          transform: "scale(1.05)",
-        },
-      }}
-    />
-  </Box>
+
+            <Box
+              component="a"
+              href="https://play.google.com/store/games?device=windows"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: "inline-block" }}
+            >
+              <Box
+                component="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play"
+                sx={{
+                  height: 55,
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}
+              />
+            </Box>
+
 
   {/* Apple App Store */}
-  <Box
-    component="a"
-    href="https://www.apple.com/app-store/"
-    target="_blank"
-    rel="noopener noreferrer"
-    sx={{ display: "inline-block" }}
-  >
-    <Box
-      component="img"
-      src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-      alt="Download on the App Store"
-      sx={{
-        height: 55,
-        cursor: "pointer",
-        transition: "transform 0.3s ease",
-        "&:hover": {
-          transform: "scale(1.05)",
-        },
-      }}
-    />
-  </Box>
-</Box>
+
+            <Box
+              component="a"
+              href="https://www.apple.com/app-store/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: "inline-block" }}
+            >
+              <Box
+                component="img"
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="Download on the App Store"
+                sx={{
+                  height: 55,
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}
+              />
+            </Box>
+          </Box>
         </Box>
       </Grid>
     </Grid>
@@ -333,137 +356,146 @@ const Home = () => {
 </Box>
 
 
-{/* OUR SERVICES */}
 
-<Box
-  sx={{
-    pt: 1,      // 🔥 reduce top gap from previous section
-    pb: 2,
-    backgroundColor: "#f8fafc",
-  }}
->
-  <Container maxWidth="xl">
-    {/* Title */}
-    <Typography
-      align="center"
-      sx={{
-        fontSize: 34,
-        fontWeight: 600,
-        letterSpacing: 1,
-        mb: 8,
-      }}
-    >
-      OUR SERVICES
-    </Typography>
 
-    <Grid
-      container
-      spacing={6}
-      justifyContent="center"
-      alignItems="stretch"
-    >
-      {[
-        {
-          icon: <HomeOutlinedIcon sx={{ fontSize: 42 }} />,
-          title: "Property Sales",
-          subtitle: "Competitive Rates",
-          primary: true,
-        },
-        {
-          icon: <VpnKeyOutlinedIcon sx={{ fontSize: 42 }} />,
-          title: "Rental Services",
-          subtitle: "Flexible Terms",
-          primary: false,
-        },
-        {
-          icon: <SupportAgentOutlinedIcon sx={{ fontSize: 42 }} />,
-          title: "Consultation",
-          subtitle: "Free Assessment",
-          primary: false,
-        },
-      ].map((item, index) => (
-        <Grid item xs={12} md={4} key={index}>
-          <Card
+            {/* OUR SERVICES */}
+
+      <Box
+        sx={{
+          pt: 1,      
+          pb: 2,
+          backgroundColor: "#f8fafc",
+        }}
+      >
+        <Container maxWidth="xl">
+          
+          {/* Title */}
+          <Typography
+            align="center"
             sx={{
-              p: 12,                       //  bigger padding
-              borderRadius: 2,
-              textAlign: "center",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
-              backgroundColor: "#ffffff",
-              height: "60%",
+              fontSize: 34,
+              fontWeight: 600,
+              letterSpacing: 1,
+              mb: 8,
             }}
           >
-            {/* Icon Box */}
-            <Box
-              sx={{
-                height: 120,              //  bigger icon area
-                borderRadius: 4,
-                backgroundColor: "#eef2f7",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                mb: 5,
-                color: index === 0 ? "#2563eb" : "#6b7280",
-              }}
-            >
-              {item.icon}
-            </Box>
+            OUR SERVICES
+          </Typography>
 
-            <Typography
-              sx={{
-                fontSize: 16,
-                mb: 2,
-              }}
-            >
-              {item.title}
-            </Typography>
-
-            <Typography
-              sx={{
-                fontSize: 28,              // 🔥 bigger headline
-                fontWeight: 800,
-                mb: 5,
-              }}
-            >
-              {item.subtitle}
-            </Typography>
-
-            <Button
-              onClick={() => navigate("/services")}
-              variant={item.primary ? "contained" : "outlined"}
-              sx={{
-                borderRadius: "40px",
-                px: 6,
-                py: 1.6,
-                fontWeight: 600,
-                fontSize: 15,
-                textTransform: "none",
-                backgroundColor: item.primary ? "#0f172a" : "transparent",
-                borderColor: "#0f172a",
-                color: item.primary ? "#ffffff" : "#0f172a",
-                "&:hover": {
-                  backgroundColor: item.primary ? "#1e293b" : "#f1f5f9",
-                },
-              }}
+          <Grid
+            container
+            spacing={{ xs: 3, mb: 6}}
+            justifyContent="center"
+            alignItems="stretch"
           >
-            LEARN MORE
-          </Button>
+            {[
+              {
+                icon: <HomeOutlinedIcon sx={{ fontSize: 42 }} />,
+                title: "Property Sales",
+                subtitle: "Competitive Rates",
+                primary: true,
+              },
+              {
+                icon: <VpnKeyOutlinedIcon sx={{ fontSize: 42 }} />,
+                title: "Rental Services",
+                subtitle: "Flexible Terms",
+                primary: false,
+              },
+              {
+                icon: <SupportAgentOutlinedIcon sx={{ fontSize: 42 }} />,
+                title: "Consultation",
+                subtitle: "Free Assessment",
+                primary: false,
+              },
+            ].map((item, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <Card
+                  sx={{
+                    p: 12,                     
+                    borderRadius: 4,
+                    textAlign: "center",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+                    backgroundColor: "#ffffff",
+                    height: "60%",
+                    transition: "all 0.35s ease",
+                    "&:hover": {
+                      transform: "translateY(-10px)",
+                      boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
+                    },
+                  }}
+                >
 
-            <Typography
-              sx={{
-                mt: 3,
-                fontSize: 13,
-                color: "#9ca3af",
-              }}
-            >
-              Available in Yangon areas
-            </Typography>
-          </Card>
-        </Grid>
-      ))}
-    </Grid>
-  </Container>
-</Box>
+                  {/* Icon Box */}
+                  <Box
+                    sx={{
+                      height: 120,            
+                      borderRadius: 4,
+                      backgroundColor: "#eef2f7",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mb: 5,
+                      color: index === 0 ? "#2563eb" : "#6b7280",
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      fontSize: 16,
+                      mb: 2,
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      fontSize: 28,             
+                      fontWeight: 800,
+                      mb: 5,
+                    }}
+                  >
+                    {item.subtitle}
+                  </Typography>
+
+                  <Button
+                    onClick={() => navigate("/services")}
+                    variant={item.primary ? "contained" : "outlined"}
+                    sx={{
+                      borderRadius: "40px",
+                      px: 6,
+                      py: 1.6,
+                      fontWeight: 600,
+                      fontSize: 15,
+                      textTransform: "none",
+                      backgroundColor: item.primary ? "#0f172a" : "transparent",
+                      borderColor: "#0f172a",
+                      color: item.primary ? "#ffffff" : "#0f172a",
+                      "&:hover": {
+                        backgroundColor: item.primary ? "#1e293b" : "#f1f5f9",
+                      },
+                    }}
+                >
+                  LEARN MORE
+                </Button>
+
+                  <Typography
+                    sx={{
+                      mt: 3,
+                      fontSize: 13,
+                      color: "#9ca3af",
+                    }}
+                  >
+                    Available in Yangon areas
+                  </Typography>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
 
 
     </>

@@ -1,14 +1,14 @@
 import {
   AppBar,
   Toolbar,
-  Typography,
+  // Typography,
   Button,
   Box,
-  IconButton,
-  Menu,
-  MenuItem,
+  // IconButton,
+  // Menu,
+  // MenuItem,
 } from "@mui/material"
-import MenuIcon from "@mui/icons-material/Menu"
+// import MenuIcon from "@mui/icons-material/Menu"
 import { NavLink } from "react-router"
 import { useState } from "react"
 import logo from "../assets/Novacity_logo.png"
@@ -33,10 +33,11 @@ const handleAppRedirect = () => {
   } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
     window.open(appStoreUrl, "_blank")
   } else {
-    // Desktop fallback
     window.open(playStoreUrl, "_blank")
   }
 }
+
+
   return (
 
     <AppBar
@@ -47,12 +48,9 @@ const handleAppRedirect = () => {
         // borderBottom: "1px solid #eee",
             bgcolor: "#fff",
             borderBottom: "1px solid rgba(15, 23, 42, 0.08)",
-            px: { xs: 1, md: 8 },
-            
+            px: { xs: 1, md: 8 },           
       }}
     >
-
-      {/* <Toolbar sx={{ justifyContent: "space-between" }}> */}
         <Toolbar
             sx={{
             justifyContent: "space-between",
@@ -60,7 +58,11 @@ const handleAppRedirect = () => {
             gap: 2,
             }}
         >
+
+
+
         {/* ===== LEFT LOGO ===== */}
+
         <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
           <Box
             component="img"
@@ -72,28 +74,20 @@ const handleAppRedirect = () => {
               objectFit: "contain",
             }}
           />
-          {/* <Typography
-            variant="h5"
-            sx={{
-                color: "#0f172a",
-                fontWeight: 800,
-                // letterSpacing: "-0.02em",
-                fontSize: { xs: 20, md: 24 },
-            }}
-          >
-            NovaCity
-          </Typography> */}
         </Box>
 
+
+
         {/* ===== Moblie MENU ===== */}
+
         <Box
             sx={{
               display: "flex",
               alignItems: "center",
               gap: { xs: 1.2, md: 2 },
-              flexWrap: "nowrap",          //  no wrapping
-            //   overflowX: "auto",           // scroll if very small screen
-              whiteSpace: "nowrap",  // prevent text break
+              flexWrap: "nowrap",        
+            //   overflowX: "auto",          
+              whiteSpace: "nowrap", 
               // pr: 4,  
               // minWidth: "max-content",      
             }}
@@ -133,7 +127,7 @@ const handleAppRedirect = () => {
               px: { xs: 2, md: 3.2 },
               py: { xs: 0.6, md: 0.9 },
               fontSize: { xs: 12, md: 14 },
-              minWidth: "auto",           // important
+              minWidth: "auto",          
               whiteSpace: "nowrap",
               mr: 2,
               boxShadow: "1px 3px 5px rgba(255,122,0,0.35)",
@@ -145,32 +139,6 @@ const handleAppRedirect = () => {
             Get App
           </Button>
         </Box>
-
-        {/* ===== MOBILE MENU ICON ===== */}
-        {/* <IconButton
-          sx={{ display: { xs: "flex", md: "none" }, color: "black" }}
-          onClick={(e) => setAnchorEl(e.currentTarget)}
-        >
-          <MenuIcon />
-        </IconButton> */}
-
-        {/* ===== MOBILE DROPDOWN ===== */}
-        {/* <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={() => setAnchorEl(null)}
-        >
-          {navItems.map((item) => (
-            <MenuItem
-              key={item.label}
-              component={NavLink}
-              to={item.path}
-              onClick={() => setAnchorEl(null)}
-            >
-              {item.label}
-            </MenuItem>
-          ))}
-        </Menu> */}
       </Toolbar>
     </AppBar>
   )

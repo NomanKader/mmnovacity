@@ -3,7 +3,7 @@ import {
   Container,
   Grid,
   Typography,
-  Button,
+  // Button,
   Divider,
   Stack,
   Link as MuiLink,
@@ -33,7 +33,10 @@ export default function Footer() {
       <Container maxWidth="lg" sx={{ py: 5 }}>
         <Grid container spacing={4}>
 
+
+
           {/* LEFT SIDE */}
+
           <Grid item xs={12} md={5}>
             <Typography variant="h4" sx={{ fontWeight: 800, mb: 2 }}>
               NovaCity
@@ -53,7 +56,10 @@ export default function Footer() {
             </Typography>
           </Grid>
 
+
+
           {/* QUICK LINKS */}
+
           <Grid item xs={6} md={2}>
             <Typography sx={{ fontWeight: 700, mb: 2 }}>
               Quick Links
@@ -78,7 +84,10 @@ export default function Footer() {
             </Stack>
           </Grid>
 
+
+
           {/* CONTACT */}
+
           <Grid item xs={6} md={2.5}>
             <Typography sx={{ fontWeight: 700, mb: 2 }}>
               Contact
@@ -123,7 +132,10 @@ export default function Footer() {
             </Stack>
           </Grid>
 
+
+
           {/* LOCATION */}
+
           <Grid item xs={12} md={2.5}>
             <Typography sx={{ fontWeight: 700, mb: 2 }}>
               Location
@@ -146,7 +158,10 @@ export default function Footer() {
           }}
         />
 
+
+
         {/* Bottom Row */}
+
         <Box
             sx={{
                 display: "flex",
@@ -163,16 +178,19 @@ export default function Footer() {
       </Container>
 
 
-      {/* Floating Viber Button (BOTTOM RIGHT) */}
+
+      {/* Viber Button  */}
+
       <Fab
         component="a"
-        href="https://www.viber.com/en/download/"
+        href="viber://chat?number=%2B959987659275"
         target="_blank"
         rel="noopener noreferrer"
         sx={{
+
             position: "fixed",
-            bottom: 30,
-            right: 30,
+            bottom: { xs: 22, sm: 30},
+            right: { xs: 25, sm: 30},
             width: 70,
             height: 70,
             bgcolor: "#7360F2",
