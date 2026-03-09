@@ -12,6 +12,7 @@ import {
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import { NavLink } from "react-router-dom";
+import viberIcon from "../assets/viber.svg";
 
 export default function Footer() {
   const links = [
@@ -52,7 +53,7 @@ export default function Footer() {
               }}
             >
               Leading real estate company in Yangon, Myanmar, specializing in
-              property sales and rentals since 2020.
+              property sales and rentals
             </Typography>
           </Grid>
 
@@ -99,17 +100,17 @@ export default function Footer() {
                 <Typography fontSize={14}>
                   <Box
                     component="a"
-                    href="tel:+959987659275"
+                    href="tel:09785581866"
                     sx={{ color: "white", textDecoration: "none", display: "block", "&:hover": { textDecoration: "underline" } }}
                   >
-                    +959987659275
+                    09785581866
                   </Box>
                   <Box
                     component="a"
-                    href="tel:+959765900318"
+                    href="tel:09678549316"
                     sx={{ color: "white", textDecoration: "none", display: "block", "&:hover": { textDecoration: "underline" } }}
                   >
-                    +959765900318
+                    09678549316
                   </Box>
                 </Typography>
               </Box>
@@ -118,7 +119,7 @@ export default function Footer() {
                 <MailIcon fontSize="small" />
                 <Typography
                   component="a"
-                  href="mailto:info@novacity.com"
+                  href="mailto:novacityrealestate920@gmail.com"
                   fontSize={14}
                   sx={{
                     color: "white",
@@ -126,7 +127,7 @@ export default function Footer() {
                     "&:hover": { textDecoration: "underline" },
                   }}
                 >
-                  info@novacity.com
+                  novacityrealestate920@gmail.com
                 </Typography>
               </Box>
             </Stack>
@@ -183,7 +184,7 @@ export default function Footer() {
 
       <Fab
         component="a"
-        href="viber://chat?number=%2B959987659275"
+        href="viber://chat?number=%2B959678549316"
         target="_blank"
         rel="noopener noreferrer"
         sx={{
@@ -191,8 +192,8 @@ export default function Footer() {
             position: "fixed",
             bottom: { xs: 22, sm: 30},
             right: { xs: 25, sm: 30},
-            width: 70,
-            height: 70,
+            width: 56,
+            height: 56,
             bgcolor: "#7360F2",
             color: "#fff",
             zIndex: 1300,
@@ -204,7 +205,11 @@ export default function Footer() {
       >
         <Box
           component="img"
-          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/viber.svg"
+          src={viberIcon}
+          width={28}
+          height={28}
+          loading="eager"
+          decoding="async"
           sx={{
             width: 28,
             height: 28,

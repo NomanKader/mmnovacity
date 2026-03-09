@@ -68,9 +68,14 @@ const handleAppRedirect = () => {
             component="img"
             src={logo}
             alt="NovaCity Logo"
+            width={1222}
+            height={568}
+            loading="eager"
+            decoding="async"
             sx={{
-              height: { xs: 32, md: 40 },
+              height: { xs: 28, md: 40 },
               width: "auto",
+              maxWidth: "100%",
               objectFit: "contain",
             }}
           />

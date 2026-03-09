@@ -213,7 +213,7 @@ return (
                         bg="#fff3ea"
                         icon={<PhoneInTalkOutlinedIcon sx={{ color: accent }} />}
                         title="Call Us"
-                        lines={["+959987659275", "+959765900318"]}
+                        lines={["09785581866", "09678549316"]}
                         />
                     </Box>
 
@@ -268,7 +268,7 @@ return (
                             border: 0,
                             display: "block",
                         }}
-                        src="https://www.google.com/maps?q=South%20Okkalapa%20Township%20Yangon%20Myanmar&output=embed"
+                        src="https://www.google.com/maps?q=16.848577,96.196533&output=embed"
                         />
                     </Paper>
                     </Box>

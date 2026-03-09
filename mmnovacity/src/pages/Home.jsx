@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -7,12 +7,17 @@ import {
   Button,
   Grid,
   Card,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from "@mui/material";
 
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import VpnKeyOutlinedIcon from "@mui/icons-material/VpnKeyOutlined";
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
+import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SearchIcon from "@mui/icons-material/Search";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
@@ -23,6 +28,7 @@ import iphoneImg from "../assets/photos/iphone.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
 
   const handleAppRedirect = () => {
@@ -31,14 +37,11 @@ const Home = () => {
 
     // Replace with REAL app links 
     const playStoreUrl =
-      "https://play.google.com/store/apps";
-    const appStoreUrl =
-      "https://apps.apple.com/";
-
+      "https://play.google.com/store/apps/details?id=com.novacity.app";
     if (/android/i.test(userAgent)) {
       window.open(playStoreUrl, "_blank");
     } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-      window.open(appStoreUrl, "_blank");
+      setComingSoonOpen(true);
     } else {
       window.open(playStoreUrl, "_blank");
     }
@@ -203,8 +206,13 @@ const Home = () => {
           component="img"
           src={iphoneImg}
           alt="App"
+          width={800}
+          height={896}
+          loading="lazy"
+          decoding="async"
           sx={{
             width: "100%",
+            height: "auto",
             maxWidth: 520,
             borderRadius: 4,
             display: "block",
@@ -304,7 +312,7 @@ const Home = () => {
 
             <Box
               component="a"
-              href="https://play.google.com/store/games?device=windows"
+              href="https://play.google.com/store/apps/details?id=com.novacity.app"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ display: "inline-block" }}
@@ -313,8 +321,12 @@ const Home = () => {
                 component="img"
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Get it on Google Play"
+                loading="lazy"
+                decoding="async"
                 sx={{
-                  height: 55,
+                  height: { xs: 44, sm: 55 },
+                  width: "auto",
+                  maxWidth: "100%",
                   cursor: "pointer",
                   transition: "transform 0.3s ease",
                   "&:hover": {
@@ -328,18 +340,21 @@ const Home = () => {
   {/* Apple App Store */}
 
             <Box
-              component="a"
-              href="https://www.apple.com/app-store/"
-              target="_blank"
-              rel="noopener noreferrer"
+              component="button"
+              type="button"
+              onClick={() => setComingSoonOpen(true)}
               sx={{ display: "inline-block" }}
             >
               <Box
                 component="img"
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                 alt="Download on the App Store"
+                loading="lazy"
+                decoding="async"
                 sx={{
-                  height: 55,
+                  height: { xs: 44, sm: 55 },
+                  width: "auto",
+                  maxWidth: "100%",
                   cursor: "pointer",
                   transition: "transform 0.3s ease",
                   "&:hover": {
@@ -363,7 +378,7 @@ const Home = () => {
       <Box
         sx={{
           pt: 1,      
-          pb: 2,
+          pb: { xs: 8, md: 12 },
           backgroundColor: "#f8fafc",
         }}
       >
@@ -384,8 +399,8 @@ const Home = () => {
 
           <Grid
             container
-            spacing={{ xs: 3, mb: 6}}
-            justifyContent="center"
+            spacing={{ xs: 3, md: 6 }}
+            columns={{ xs: 1, sm: 2, md: 4 }}
             alignItems="stretch"
           >
             {[
@@ -407,16 +422,22 @@ const Home = () => {
                 subtitle: "Free Assessment",
                 primary: false,
               },
+              {
+                icon: <ConstructionOutlinedIcon sx={{ fontSize: 42 }} />,
+                title: "Construction Services",
+                subtitle: "Trusted Builds",
+                primary: false,
+              },
             ].map((item, index) => (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid key={index} size={1}>
                 <Card
                   sx={{
-                    p: 12,                     
+                    p: { xs: 5, md: 7 },
                     borderRadius: 4,
                     textAlign: "center",
                     boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
                     backgroundColor: "#ffffff",
-                    height: "60%",
+                    height: "auto",
                     transition: "all 0.35s ease",
                     "&:hover": {
                       transform: "translateY(-10px)",
@@ -428,13 +449,13 @@ const Home = () => {
                   {/* Icon Box */}
                   <Box
                     sx={{
-                      height: 120,            
+                      height: 96,
                       borderRadius: 4,
                       backgroundColor: "#eef2f7",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      mb: 5,
+                      mb: 4,
                       color: index === 0 ? "#2563eb" : "#6b7280",
                     }}
                   >
@@ -444,7 +465,7 @@ const Home = () => {
                   <Typography
                     sx={{
                       fontSize: 16,
-                      mb: 2,
+                      mb: 1.5,
                     }}
                   >
                     {item.title}
@@ -452,9 +473,9 @@ const Home = () => {
 
                   <Typography
                     sx={{
-                      fontSize: 28,             
+                      fontSize: { xs: 22, md: 26 },
                       fontWeight: 800,
-                      mb: 5,
+                      mb: 3,
                     }}
                   >
                     {item.subtitle}
@@ -464,11 +485,12 @@ const Home = () => {
                     onClick={() => navigate("/services")}
                     variant={item.primary ? "contained" : "outlined"}
                     sx={{
-                      borderRadius: "40px",
-                      px: 6,
-                      py: 1.6,
+                      borderRadius: "28px",
+                      px: 3.5,
+                      py: 1.1,
                       fontWeight: 600,
-                      fontSize: 15,
+                      fontSize: 14,
+                      minHeight: 40,
                       textTransform: "none",
                       backgroundColor: item.primary ? "#0f172a" : "transparent",
                       borderColor: "#0f172a",
@@ -483,7 +505,7 @@ const Home = () => {
 
                   <Typography
                     sx={{
-                      mt: 3,
+                      mt: 2.5,
                       fontSize: 13,
                       color: "#9ca3af",
                     }}
@@ -496,6 +518,25 @@ const Home = () => {
           </Grid>
         </Container>
       </Box>
+
+
+      <Dialog
+        open={comingSoonOpen}
+        onClose={() => setComingSoonOpen(false)}
+        aria-labelledby="app-store-coming-soon-title"
+      >
+        <DialogTitle id="app-store-coming-soon-title">Coming Soon</DialogTitle>
+        <DialogContent>
+          <Typography>
+            The iOS app is coming soon. Please check back later.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setComingSoonOpen(false)} variant="contained">
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
 
 
     </>

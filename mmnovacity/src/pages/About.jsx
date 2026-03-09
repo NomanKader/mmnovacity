@@ -201,8 +201,14 @@ export default function About() {
               component="img"
               src={peopleImg}
               alt="people"
+              width={688}
+              height={800}
+              loading="lazy"
+              decoding="async"
               sx={{
                 width: "100%",
+                height: "auto",
+                maxWidth: "100%",
                 borderRadius: 4,
                 boxShadow: 3
               }}
@@ -216,7 +222,7 @@ export default function About() {
 
      {/* ==== ACHIEVEMENTS ==== */}
 
-<Box sx={{ py: 10, backgroundColor: "#f5f5f5" }}>
+<Box component="section" id="our-achievements" sx={{ py: 10, backgroundColor: "#f5f5f5" }}>
   <Container>
     <Typography
       variant="h4"

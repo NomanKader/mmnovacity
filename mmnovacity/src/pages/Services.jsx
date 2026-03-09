@@ -1,10 +1,15 @@
+import { useState } from "react"
 import { Link } from "react-router"
 import {
   Box,
   Container,
   Typography,
   Grid,
-  Button
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions
 } from "@mui/material"
 
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
@@ -17,24 +22,24 @@ import serviceHouse from "../assets/photos/servicehouse.jpg"
 import serviceCouch from "../assets/photos/servicecouch.jpg"
 import serviceMeet from "../assets/photos/servicemeet.jpg"
 
-const handleAppRedirect = () => {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-  const playStoreUrl =
-    "https://play.google.com/store/apps"; 
-  const appStoreUrl =
-    "https://www.apple.com/app-store/"; 
-
- if (/android/i.test(userAgent)) {
-    window.open(playStoreUrl, "_blank");
-  } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-    window.open(appStoreUrl, "_blank");
-  } else {
-    window.open(playStoreUrl, "_blank");
-  }
-};
-
 export default function Services() {
+  const [comingSoonOpen, setComingSoonOpen] = useState(false)
+
+  const handleAppRedirect = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera
+
+    const playStoreUrl =
+      "https://play.google.com/store/apps/details?id=com.novacity.app"
+
+    if (/android/i.test(userAgent)) {
+      window.open(playStoreUrl, "_blank")
+    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+      setComingSoonOpen(true)
+    } else {
+      window.open(playStoreUrl, "_blank")
+    }
+  }
+
   return (
     <>
      
@@ -43,7 +48,7 @@ export default function Services() {
           height: "55vh",
           backgroundImage: `url(${serviceHero})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: { xs: "center top", md: "center 20%" },
           position: "relative",
           display: "flex",
           alignItems: "center",
@@ -71,6 +76,24 @@ export default function Services() {
           </Typography>
         </Box>
       </Box>
+
+      <Dialog
+        open={comingSoonOpen}
+        onClose={() => setComingSoonOpen(false)}
+        aria-labelledby="app-store-coming-soon-title"
+      >
+        <DialogTitle id="app-store-coming-soon-title">Coming Soon</DialogTitle>
+        <DialogContent>
+          <Typography>
+            The iOS app is coming soon. Please check back later.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setComingSoonOpen(false)} variant="contained">
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
 
 
 
@@ -143,8 +166,15 @@ export default function Services() {
               <Box
                 component="img"
                 src={serviceHouse}
+                alt="Residential property service"
+                width={688}
+                height={592}
+                loading="lazy"
+                decoding="async"
                 sx={{
                   width: "100%",
+                  height: "auto",
+                  maxWidth: "100%",
                   borderRadius: 4,
                   boxShadow: 4
                 }}
@@ -161,8 +191,15 @@ export default function Services() {
               <Box
                 component="img"
                 src={serviceCouch}
+                alt="Rental services"
+                width={688}
+                height={592}
+                loading="lazy"
+                decoding="async"
                 sx={{
                   width: "100%",
+                  height: "auto",
+                  maxWidth: "100%",
                   borderRadius: 4,
                   boxShadow: 4
                 }}
@@ -282,8 +319,15 @@ export default function Services() {
               <Box
                 component="img"
                 src={serviceMeet}
+                alt="Property consultation meeting"
+                width={688}
+                height={592}
+                loading="lazy"
+                decoding="async"
                 sx={{
                   width: "100%",
+                  height: "auto",
+                  maxWidth: "100%",
                   borderRadius: 4,
                   boxShadow: 4
                 }}
@@ -422,7 +466,7 @@ export default function Services() {
         mb: 6
       }}
     >
-      Let us help you discover the perfect home or investment opportunity in Yangon
+      Let us help you discover the perfect home or investment opportunity with us
     </Typography>
 
     <Box
