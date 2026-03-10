@@ -9,6 +9,9 @@ import ShieldIcon from "@mui/icons-material/Shield"
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents"
 import GroupsIcon from "@mui/icons-material/Groups"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
+import TrackChangesIcon from "@mui/icons-material/TrackChanges"
+import HandshakeIcon from "@mui/icons-material/Handshake"
+import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined"
 
 import peopleImg from "../assets/photos/people.jpg"
 import niceBuilding from "../assets/photos/nicebuilding.jpg"
@@ -63,6 +66,118 @@ export default function About() {
             Home &gt; About Us
           </Typography>
         </Box>
+      </Box>
+
+
+      {/* === WHO WE ARE === */}
+
+      <Box
+        sx={{
+          py: { xs: 7, md: 11 },
+          background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)",
+          borderBottom: "1px solid #eef2f7",
+        }}
+      >
+        <Container>
+          <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Typography
+                variant="overline"
+                sx={{
+                  letterSpacing: 2.5,
+                  color: "#0f172a",
+                  fontWeight: 700,
+                }}
+              >
+                About Us
+              </Typography>
+              <Typography
+                variant="h4"
+                fontWeight={800}
+                sx={{ mt: 1, mb: 2 }}
+              >
+                Who We Are
+              </Typography>
+              <Box
+                sx={{
+                  width: 64,
+                  height: 4,
+                  borderRadius: 999,
+                  backgroundColor: "#e8742b",
+                  mb: 3,
+                }}
+              />
+              <Typography color="text.secondary" sx={{ fontSize: 16, lineHeight: 1.8 }}>
+                Nova City is a leading real estate online platform that serves as peer-to-peer
+                connections, deals, and transactions between buyers, sellers, and renters.
+              </Typography>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Grid container spacing={{ xs: 2.5, md: 3 }}>
+                {[
+                  {
+                    title: "Our Purpose",
+                    text: "Our purpose is to build a platform where buyers, sellers, and renters can easily make deals for properties they want to buy, sell, or rent in a marketplace.",
+                    icon: <TrackChangesIcon sx={{ color: "#e8742b" }} />,
+                    bg: "rgba(232,116,43,0.12)",
+                  },
+                  {
+                    title: "Our Commitment",
+                    text: 'We believe in a transparent real estate experience where users have the freedom to engage in "free trade" and make deals based on their own choices.',
+                    icon: <HandshakeIcon sx={{ color: "#3f6fd8" }} />,
+                    bg: "rgba(63,111,216,0.12)",
+                  },
+                  {
+                    title: "Location",
+                    text: "We are proudly based in South Okkalapa, Yangon, serving the real estate community from and within Myanmar.",
+                    icon: <PlaceOutlinedIcon sx={{ color: "#2f7f77" }} />,
+                    bg: "rgba(47,127,119,0.12)",
+                  },
+                ].map((item, index) => (
+                  <Grid key={item.title} size={{ xs: 12, sm: index === 2 ? 12 : 6 }}>
+                    <Box
+                      sx={{
+                        height: "100%",
+                        p: { xs: 3, md: 3.5 },
+                        borderRadius: 3,
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #e2e8f0",
+                        boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                        "&:hover": {
+                          transform: "translateY(-6px)",
+                          boxShadow: "0 20px 45px rgba(15, 23, 42, 0.12)",
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: 52,
+                          height: 52,
+                          borderRadius: "50%",
+                          backgroundColor: item.bg,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          mb: 2.5,
+                        }}
+                      >
+                        {item.icon}
+                      </Box>
+                      <Typography variant="h6" fontWeight={700} mb={1}>
+                        {item.title}
+                      </Typography>
+                      <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                        {item.text}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
 
 
@@ -235,10 +350,10 @@ export default function About() {
 
     <Grid container spacing={4} justifyContent="center">
       {[
-        { number: "500+", label: "Properties Sold", color: "#2f7f77" },   
-        { number: "1,200+", label: "Happy Clients", color: "#e8742b" },  
+        { number: "150+", label: "Property Sold", color: "#2f7f77" },
+        { number: "1,200+", label: "Happy Clients", color: "#e8742b" },
         { number: "15+", label: "Townships Covered", color: "#3f6fd8" },
-        { number: "5+", label: "Years Experience", color: "#3c8c40" }    
+        { number: "70+", label: "Collaboration", color: "#3c8c40" }
       ].map((item, index) => (
         <Grid key={index} size={{ xs: 6, md: 3 }}>
           <Box textAlign="center">
