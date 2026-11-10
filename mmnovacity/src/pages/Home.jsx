@@ -24,28 +24,14 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
 import buildingImg from "../assets/photos/building.jpg";
 import iphoneImg from "../assets/photos/iphone.jpg";
+import PropertyFaq from "../components/PropertyFaq";
 
 
 const Home = () => {
   const navigate = useNavigate();
   const [comingSoonOpen, setComingSoonOpen] = useState(false);
+  const propertyExploreUrl = "http://www.novacitymm.com/h5/#/";
 
-
-  const handleAppRedirect = () => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-
-    // Replace with REAL app links 
-    const playStoreUrl =
-      "https://play.google.com/store/apps/details?id=com.novacity.app";
-    if (/android/i.test(userAgent)) {
-      window.open(playStoreUrl, "_blank");
-    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-      setComingSoonOpen(true);
-    } else {
-      window.open(playStoreUrl, "_blank");
-    }
-  };
 
   return (
     <>
@@ -78,6 +64,7 @@ const Home = () => {
 
         <Container sx={{ position: "relative", zIndex: 2 }}>
           <Typography
+            component="h1"
             sx={{
               fontWeight: 800,
               fontSize: { xs: 28, md: 64 },
@@ -86,18 +73,9 @@ const Home = () => {
             }}
           >
             DISCOVER YOUR DREAM
+            <br />HOME IN YANGON
           </Typography>
 
-          <Typography
-            sx={{
-              fontWeight: 800,
-              fontSize: { xs: 28, md: 64 },
-              letterSpacing: 2,
-              lineHeight: 1.1,
-            }}
-          >
-            HOME IN YANGON
-          </Typography>
 
           <Typography sx={{ mt: 3, opacity: 0.95 }}>
             Premium Properties for Sale & Rent
@@ -109,7 +87,9 @@ const Home = () => {
 
 
           <Button
-            onClick={handleAppRedirect}
+            onClick={() => {
+              window.location.href = propertyExploreUrl;
+            }}
             sx={{
               mt: 4,
               px: 4,
@@ -312,7 +292,7 @@ const Home = () => {
 
             <Box
               component="a"
-              href="https://play.google.com/store/apps/details?id=com.novacity.app"
+              href="https://play.google.com/store/apps/details?id=com.novacitymm.app"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ display: "inline-block" }}
@@ -519,6 +499,8 @@ const Home = () => {
         </Container>
       </Box>
 
+
+      <PropertyFaq />
 
       <Dialog
         open={comingSoonOpen}

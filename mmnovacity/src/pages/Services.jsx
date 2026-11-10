@@ -1,15 +1,10 @@
-import { useState } from "react"
 import { Link } from "react-router"
 import {
   Box,
   Container,
   Typography,
   Grid,
-  Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions
+  Button
 } from "@mui/material"
 
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
@@ -23,22 +18,7 @@ import serviceCouch from "../assets/photos/servicecouch.jpg"
 import serviceMeet from "../assets/photos/servicemeet.jpg"
 
 export default function Services() {
-  const [comingSoonOpen, setComingSoonOpen] = useState(false)
-
-  const handleAppRedirect = () => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera
-
-    const playStoreUrl =
-      "https://play.google.com/store/apps/details?id=com.novacity.app"
-
-    if (/android/i.test(userAgent)) {
-      window.open(playStoreUrl, "_blank")
-    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-      setComingSoonOpen(true)
-    } else {
-      window.open(playStoreUrl, "_blank")
-    }
-  }
+  const propertyExploreUrl = "http://www.novacitymm.com/h5/#/"
 
   return (
     <>
@@ -65,6 +45,7 @@ export default function Services() {
         />
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <Typography
+            component="h1"
             variant="h2"
             fontWeight="bold"
             sx={{ fontSize: { xs: "32px", md: "48px" } }}
@@ -76,26 +57,6 @@ export default function Services() {
           </Typography>
         </Box>
       </Box>
-
-      <Dialog
-        open={comingSoonOpen}
-        onClose={() => setComingSoonOpen(false)}
-        aria-labelledby="app-store-coming-soon-title"
-      >
-        <DialogTitle id="app-store-coming-soon-title">Coming Soon</DialogTitle>
-        <DialogContent>
-          <Typography>
-            The iOS app is coming soon. Please check back later.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setComingSoonOpen(false)} variant="contained">
-            OK
-          </Button>
-        </DialogActions>
-      </Dialog>
-
-
 
       {/*  SECTION WRAPPER  */}
 
@@ -480,7 +441,9 @@ export default function Services() {
 
       {/* Browse Properties */}
       <Button
-        onClick={handleAppRedirect}
+        onClick={() => {
+          window.location.href = propertyExploreUrl
+        }}
           sx={{
             px: 6,
             py: 2,

@@ -9,6 +9,7 @@ import Services from "./pages/Services"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 import AlwaysOnTop from "./components/AlwaysOnTop";
 import "./index.css"
+import SearchMetadata from "./components/SearchMetadata"
 
 
 
@@ -17,6 +18,7 @@ function PageFade({ children }) {
 
   return (
     <Box
+      component="main"
       key={location.pathname}
       sx={{
         animation: "pageFade 450ms ease both",
@@ -36,6 +38,7 @@ function App() {
   return (
     <>
 
+      <SearchMetadata />
       <AlwaysOnTop />
         <Navbar />
           <PageFade>

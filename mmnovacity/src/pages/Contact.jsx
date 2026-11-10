@@ -141,6 +141,7 @@ return (
             <Container maxWidth="lg">
                 <Stack spacing={1.4} alignItems="center" textAlign="center">
                     <Typography
+                    component="h1"
                     sx={{
                         fontWeight: 900,
                         letterSpacing: "0.01em",
@@ -213,7 +214,7 @@ return (
                         bg="#fff3ea"
                         icon={<PhoneInTalkOutlinedIcon sx={{ color: accent }} />}
                         title="Call Us"
-                        lines={["09785581866", "09678549316"]}
+                        lines={["09785581866"]}
                         />
                     </Box>
 

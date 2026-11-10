@@ -105,13 +105,6 @@ export default function Footer() {
                   >
                     09785581866
                   </Box>
-                  <Box
-                    component="a"
-                    href="tel:09678549316"
-                    sx={{ color: "white", textDecoration: "none", display: "block", "&:hover": { textDecoration: "underline" } }}
-                  >
-                    09678549316
-                  </Box>
                 </Typography>
               </Box>
 
@@ -184,7 +177,7 @@ export default function Footer() {
 
       <Fab
         component="a"
-        href="viber://chat?number=%2B959678549316"
+        href="viber://chat?number=%2B959785581866"
         target="_blank"
         rel="noopener noreferrer"
         sx={{

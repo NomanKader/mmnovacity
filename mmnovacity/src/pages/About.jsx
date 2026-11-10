@@ -55,6 +55,7 @@ export default function About() {
 
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <Typography
+            component="h1"
             variant="h2"
             fontWeight="bold"
             sx={{ fontSize: { xs: "32px", md: "48px" } }}
